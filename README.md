@@ -179,4 +179,4 @@ Visit your domain (or server IP address) in a browser to verify that the applica
 
 ---
 
-That's it! You've successfully deployed your Django application using Gunicorn and Nginx. Let me know if you need further clarification or encounter any issues!
+That's it! You've successfully deployed your Django application using Gunicorn and Nginx.
