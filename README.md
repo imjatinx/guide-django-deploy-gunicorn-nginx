@@ -102,7 +102,7 @@ server {
     }
 
     location / {
-        proxy_pass http://127.0.0.1:8000;
+        proxy_pass http://127.0.0.1:8000; # Point to your Gunicorn server
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -145,17 +145,7 @@ Restart Nginx to apply the changes:
 sudo systemctl restart nginx
 ```
 
-### Step 9: Collect Static Files
-
-In production, you need to collect your static files. Run the following command from your Django project directory:
-
-```bash
-python manage.py collectstatic
-```
-
-Make sure your `STATIC_URL`, `STATIC_ROOT`, `MEDIA_URL`, and `MEDIA_ROOT` are properly configured in `settings.py`.
-
-### Step 10: Set Up SSL (Optional)
+### Step 9: Set Up SSL (Optional)
 
 If you want to secure your site with HTTPS, you can use Let’s Encrypt:
 
